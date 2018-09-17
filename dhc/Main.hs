@@ -3,11 +3,11 @@
 
 import qualified Data.ByteString as B
 import Asm
-import Demo
+import CWA
 
 main :: IO ()
 main = do
   s <- getContents
-  case hsToWasm jsDemoBoost s of
+  case hsToWasm cwaBoost s of
     Left err -> error err
     Right bin -> B.putStr $ B.pack $ fromIntegral <$> bin
